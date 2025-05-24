@@ -8,27 +8,30 @@ package controleRemoto;
  *
  * @author kakaw
  */
-public class ControleRemoto extends Controlador {
+public class ControleRemoto implements Controlador {
     
+    //Atributos
     private int volume;
     private boolean ligado;
     private boolean tocando;
     
-    
+    //Construtor
     public ControleRemoto() {
-        volume = 50;
-        ligado = false;
-        tocando = false;
+        this.volume = 50;
+        this.ligado = false;
+        this.tocando = false;
     }
     
+    
+    //Métodos Abstratos
     @Override
     public void ligar() {
-        setLigado(true);
+        this.setLigado(true);
     }
     
     @Override
     public void desligar() {
-        setLigado(false);
+        this.setLigado(false);
     }
     
     @Override
@@ -88,25 +91,25 @@ public class ControleRemoto extends Controlador {
         }
     } 
     
-   
+   //Métodos Especiais
     public int getVolume() {
         return volume;
     }
-    public void setVolume(int v) {
-        this.volume = v;
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
     
     public boolean getLigado() {
         return ligado;
     }
-    public void setLigado(boolean l) {
-        this.ligado = l;
+    public void setLigado(boolean ligado) {
+        this.ligado = ligado;
     }
     
     public boolean getTocando() {
         return tocando;
     }
-    public void setTocando(boolean t) {
-        this.tocando = t;
+    public void setTocando(boolean tocando) {
+        this.tocando = tocando;
     }
 }
