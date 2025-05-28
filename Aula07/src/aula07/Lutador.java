@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package aula07;
 
-/**
- *
- * @author kakaw
- */
 public class Lutador {
 
     //Atributos
@@ -33,24 +25,24 @@ public class Lutador {
         this.empates = empate;
     }
     
-    //Métodos acessores
+    //Métodos públicos
     public void apresentar() {
-        System.out.println("Lutador: " + this.getNome());
-        System.out.println("Origem: " + this.getNacionalidade());
-        System.out.println(this.getIdade() + " anos");
-        System.out.println(this.getAltura() + " m de altura");
+        System.out.println("CHEGOU A HORA! Apresentamos o lutador " + this.getNome());
+        System.out.println("Diretamente de " + this.getNacionalidade());
+        System.out.println("Com " + this.getIdade() + " anos e " + this.getAltura() + "m de altura");
         System.out.println("Pesando " + this.getPeso() + "Kg");
-        System.out.println("Ganhou: " + this.getVitorias());
-        System.out.println("Perdeu: " + this.getDerrotas());
-        System.out.println("Empatou: " + this.getEmpates());   
+        System.out.println(this.getVitorias() + " vitorias");
+        System.out.println(this.getDerrotas() + " derrotas");
+        System.out.println(this.getEmpates() + " empates");   
     }
     
     public void status() {
-        System.out.println(this.getNome());
-        System.out.println("peso " + this.getCategoria());
-        System.out.println(this.getVitorias() + " vitorias");
-        System.out.println(this.getDerrotas() + " derrotas");
-        System.out.println(this.getEmpates() + " empates");
+        System.out.println("- - - - - - - - - - - - - -");
+        System.out.println(this.getNome() + " e um peso " + this.getCategoria());
+        System.out.println("Perdeu " + this.getDerrotas() + " vezes");
+        System.out.println("Ganhou " + this.getVitorias() + " vezes");
+        System.out.println("Empatou " + this.getEmpates() + " vezes");
+        System.out.println("- - - - - - - - - - - - - -");
     }
     
     public void ganharLuta() {
@@ -65,7 +57,7 @@ public class Lutador {
         this.setEmpates(this.getEmpates() + 1);
     }
     
-    //Métodos Especiais
+    //Métodos Acessores
     public String getNome() {
         return nome;
     }
@@ -99,23 +91,23 @@ public class Lutador {
     }
     public void setPeso(double peso) {
         this.peso = peso;
-        this.getCategoria();
+        this.setCategoria(null);
     }
 
     public String getCategoria() {
         return categoria;
     }
-    public void setCategoria(String categoria) {
+    private void setCategoria(String categoria) {
         if (this.peso < 52.2) {
-            this.setCategoria("Invalido");
+           this.categoria = "Invalido";
         } else if (this.peso <= 70.3) {
-            this.setCategoria("Leve");
+            this.categoria = "Leve";
         } else if (this.peso <= 83.9) {
-           this.setCategoria("Medio");
+           this.categoria = "Medio";
         } else if (this.peso <= 120.2) {
-            this.setCategoria("Pesado");
+            this.categoria = "Pesado";
         } else {
-            this.setCategoria("Invalido");
+            this.categoria = "Invalido";
         }
     }
 
